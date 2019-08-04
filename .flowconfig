@@ -1,0 +1,10 @@
+[ignore]
+
+[include]
+
+[libs]
+./node_modules/@magica11y/cauldron/flow-typed
+
+[lints]
+
+[options]
