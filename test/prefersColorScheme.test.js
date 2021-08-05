@@ -13,10 +13,6 @@ describe('prefersColorScheme()', () => {
 
     const testParameters: Array<TestParameter> = [
       {
-        testInput: colorSchemes.NO_PREFERENCE,
-        expectedOutput: 'no-preference',
-      },
-      {
         testInput: colorSchemes.DARK,
         expectedOutput: 'dark',
       },
