@@ -19,7 +19,7 @@ describe('prefersColorScheme()', () => {
       {
         testInput: colorSchemes.LIGHT,
         expectedOutput: 'light',
-      },
+      }
     ];
 
     testParameters.forEach((testParameter: TestParameter) => {
