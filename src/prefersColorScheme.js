@@ -6,7 +6,7 @@ import colorSchemes, { type ColorScheme } from './colorSchemes';
 
 const contrastPreferenceValues: Array<ColorScheme> = [
   colorSchemes.DARK,
-  colorSchemes.LIGHT,
+  colorSchemes.LIGHT
 ];
 
 /**
