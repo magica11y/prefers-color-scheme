@@ -2,42 +2,29 @@
 
 import mockWindowMatchMedia from '@magica11y/match-user-preference/lib/testing/mockWindowMatchMedia';
 
-import prefersColorScheme, { colorSchemes, type ColorScheme } from '../src';
+import prefersColorScheme, { colorSchemes } from '../src';
 
 describe('prefersColorScheme()', () => {
-  it('returns a color scheme preference when media-query matches', () => {
-    type TestParameter = {|
-      testInput: ColorScheme,
-      expectedOutput: ColorScheme,
-    |};
+  afterEach(() => {
+    window.matchMedia.mockClear();
+  });
 
-    const testParameters: Array<TestParameter> = [
-      {
-        testInput: colorSchemes.NO_PREFERENCE,
-        expectedOutput: 'no-preference',
-      },
-      {
-        testInput: colorSchemes.DARK,
-        expectedOutput: 'dark',
-      },
-      {
-        testInput: colorSchemes.LIGHT,
-        expectedOutput: 'light',
-      },
-    ];
-
-    testParameters.forEach((testParameter: TestParameter) => {
+  it.each`
+    testInput             | expectedOutput
+    ${colorSchemes.DARK}  | ${'dark'}
+    ${colorSchemes.LIGHT} | ${'light'}
+  `(
+    'returns "$expectedOutput" when color scheme preference media-query matches "$testInput"',
+    ({ testInput, expectedOutput }) => {
       window.matchMedia = jest
         .fn()
-        .mockImplementation(() => mockWindowMatchMedia(true, `(prefers-color-scheme: ${testParameter.testInput})`));
+        .mockImplementation(() => mockWindowMatchMedia(true, `(prefers-color-scheme: ${testInput})`));
 
       const preferredColorScheme = prefersColorScheme();
 
-      expect(preferredColorScheme).toEqual(testParameter.expectedOutput);
-
-      window.matchMedia.mockClear();
-    });
-  });
+      expect(preferredColorScheme).toEqual(expectedOutput);
+    },
+  );
 
   it('returns "null" when preference cannot be determined', () => {
     window.matchMedia = jest.fn().mockImplementation(() => mockWindowMatchMedia(false, 'not all'));

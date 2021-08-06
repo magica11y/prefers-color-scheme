@@ -21,8 +21,7 @@
 Quoting from the [CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3) [level 5](https://drafts.csswg.org/mediaqueries-5)
 [media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries) specfication…
 
-> The [`'prefers-color-scheme'`](https://drafts.csswg.org/mediaqueries-5/#prefers-color-scheme) media feature
-> indicates whether the content is displayed normally, or whether colors have been inverted.
+> The [`'prefers-color-scheme'`](https://drafts.csswg.org/mediaqueries-5/#prefers-color-scheme) media feature reflects the user’s desire that the page use a light or dark color theme.
 
 :high_brightness: **`prefersColorScheme()`** is part of :crystal_ball: [**Magica11y**](https://magica11y.github.io),
 which provides a suite of functions to detect “user-preference” and “environment” media features.
@@ -92,12 +91,10 @@ const enableDarkTheme = (preferredColorScheme === colorSchemes.DARK);
 
 The `colorSchemes` object contains all the possible values supported by the `'prefers-color-scheme'` media query…
 
-* `colorSchemes.NO_PREFERENCE` (spec: [`'no-preference'`](https://drafts.csswg.org/mediaqueries-5/#valdef-media-prefers-color-scheme-no-preference))
-  > Indicates that the user has made no preference known to the system.
 * `colorSchemes.LIGHT` (spec: [`'light'`](https://drafts.csswg.org/mediaqueries-5/#valdef-media-prefers-color-scheme-light))
-  > Indicates that user has notified the system that they prefer a page that has a light theme (dark text on light background).
+  > Indicates that user has expressed the preference for a page that has a light theme (dark text on light background), or has not expressed an active preference (and thus should receive the "web default" of a light theme).
 * `colorSchemes.DARK` (spec: [`'dark'`](https://drafts.csswg.org/mediaqueries-5/#valdef-media-prefers-color-scheme-dark))
-  > Indicates that user has notified the system that they prefer a page that has a dark theme (light text on dark background).
+  > Indicates that user has expressed the preference for a page that has a dark theme (light text on dark background).
 * `null`
   > The user’s preference could not be determined.
 
