@@ -18,10 +18,10 @@
 
 # :sparkles: Introduction
 
-Quoting from the [CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3) [level 5](https://drafts.csswg.org/mediaqueries-5)
+Quoting from the [CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3) [level 5](https://www.w3.org/TR/mediaqueries-5/)
 [media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries) specfication…
 
-> The [`'prefers-color-scheme'`](https://drafts.csswg.org/mediaqueries-5/#prefers-color-scheme) media feature reflects the user’s desire that the page use a light or dark color theme.
+> The [`'prefers-color-scheme'`](https://www.w3.org/TR/mediaqueries-5/#prefers-color-scheme) media feature reflects the user’s desire that the page use a light or dark color theme.
 
 :high_brightness: **`prefersColorScheme()`** is part of :crystal_ball: [**Magica11y**](https://magica11y.github.io),
 which provides a suite of functions to detect “user-preference” and “environment” media features.
@@ -38,7 +38,7 @@ In addition to `prefersColorScheme()`, [Magica11y](https://magica11y.github.io) 
   * :tv: [`environmentBlending()`](https://github.com/magica11y/environment-blending)
   * :art: [`forcedColors()`](https://github.com/magica11y/forced-colors)
   * :new_moon: [`invertedColors()`](https://github.com/magica11y/inverted-colors)
-  * :candle: [`lightLevel()`](https://github.com/magica11y/light-level)
+  * ~:candle: [`lightLevel()`](https://github.com/magica11y/light-level)~
   * :high_brightness: [`prefersContrast()`](https://github.com/magica11y/prefers-contrast)
   * :roller_coaster: [`prefersReducedMotion()`](https://github.com/magica11y/prefers-reduced-motion)
   * :gem: [`prefersReducedTransparency()`](https://github.com/magica11y/prefers-reduced-transparency)
@@ -91,9 +91,9 @@ const enableDarkTheme = (preferredColorScheme === colorSchemes.DARK);
 
 The `colorSchemes` object contains all the possible values supported by the `'prefers-color-scheme'` media query…
 
-* `colorSchemes.LIGHT` (spec: [`'light'`](https://drafts.csswg.org/mediaqueries-5/#valdef-media-prefers-color-scheme-light))
+* `colorSchemes.LIGHT` (spec: [`'light'`](https://www.w3.org/TR/mediaqueries-5/#valdef-media-prefers-color-scheme-light))
   > Indicates that user has expressed the preference for a page that has a light theme (dark text on light background), or has not expressed an active preference (and thus should receive the "web default" of a light theme).
-* `colorSchemes.DARK` (spec: [`'dark'`](https://drafts.csswg.org/mediaqueries-5/#valdef-media-prefers-color-scheme-dark))
+* `colorSchemes.DARK` (spec: [`'dark'`](https://www.w3.org/TR/mediaqueries-5/#valdef-media-prefers-color-scheme-dark))
   > Indicates that user has expressed the preference for a page that has a dark theme (light text on dark background).
 * `null`
   > The user’s preference could not be determined.
